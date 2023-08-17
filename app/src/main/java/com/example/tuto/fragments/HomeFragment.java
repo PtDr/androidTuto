@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tuto.DataBaseInstance;
+import com.example.tuto.FirebaseInstance;
 import com.example.tuto.MainActivity;
 import com.example.tuto.R;
 import com.example.tuto.adapters.PlantAdapter;
@@ -35,11 +35,11 @@ public class HomeFragment extends Fragment {
 
             //recuperer  le recycler view
             RecyclerView horizontalRecyclerView = view.findViewById(R.id.horizontal_recycler_view);
-            horizontalRecyclerView.setAdapter(new PlantAdapter(context, DataBaseInstance.getInstance().getPlantList(), R.layout.item_horizontal_plant, repository));
+            horizontalRecyclerView.setAdapter(new PlantAdapter(context, FirebaseInstance.getInstance().getPlantListNotLiked(), R.layout.item_horizontal_plant, repository));
 
             //recuperer  le recycler view
             RecyclerView verticalRecyclerView = view.findViewById(R.id.vertical_recycler_view);
-            verticalRecyclerView.setAdapter(new PlantAdapter(context, DataBaseInstance.getInstance().getPlantList(), R.layout.item_vertical_plant, repository));
+            verticalRecyclerView.setAdapter(new PlantAdapter(context, FirebaseInstance.getInstance().getPlantList(), R.layout.item_vertical_plant, repository));
             verticalRecyclerView.addItemDecoration(new PlantItemDecoration());
 
             //actualise la Liste plante

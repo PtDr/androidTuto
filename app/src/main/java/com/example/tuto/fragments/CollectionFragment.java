@@ -11,14 +11,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tuto.DataBaseInstance;
+import com.example.tuto.FirebaseInstance;
 import com.example.tuto.MainActivity;
 import com.example.tuto.R;
 import com.example.tuto.adapters.PlantAdapter;
 import com.example.tuto.adapters.PlantItemDecoration;
 import com.example.tuto.repository.PlantRepository;
-
-import java.util.stream.Collectors;
 
 public class CollectionFragment extends Fragment {
 
@@ -37,7 +35,7 @@ public class CollectionFragment extends Fragment {
 
             RecyclerView collectionRecyclerView = view.findViewById(R.id.collection_recycler_list);
             collectionRecyclerView.setAdapter(new PlantAdapter(context,
-                                                DataBaseInstance.getInstance().getPlantListLiked(),
+                                                FirebaseInstance.getInstance().getPlantListLiked(),
                                                 R.layout.item_vertical_plant, plantRepository));
             collectionRecyclerView.setLayoutManager(new LinearLayoutManager(context));
             collectionRecyclerView.addItemDecoration(new PlantItemDecoration());

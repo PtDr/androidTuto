@@ -36,6 +36,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.github.bumptech.glide:glide:4.11.0")
     implementation("com.google.firebase:firebase-database:20.2.2")
+    implementation("com.google.firebase:firebase-storage:20.2.1")
     compileOnly("org.projectlombok:lombok:1.18.28")
     annotationProcessor("org.projectlombok:lombok:1.18.28");
     testImplementation("junit:junit:4.13.2")
