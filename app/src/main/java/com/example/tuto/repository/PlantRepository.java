@@ -33,10 +33,14 @@ public class PlantRepository {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dataBase.getPlantList().clear();
+                dataBase.getPlantListLiked().clear();
                 for (DataSnapshot child:snapshot.getChildren()){
                     PlantModel plant = child.getValue(PlantModel.class);
 
-                    if (plant != null) dataBase.getPlantList().add(plant);
+                    if (plant != null){
+                        dataBase.getPlantList().add(plant);
+                        if (plant.getLiked())   dataBase.getPlantListLiked().add(plant);
+                    }
                 }
 
                 //refresh data

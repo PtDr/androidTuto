@@ -40,11 +40,10 @@ public class HomeFragment extends Fragment {
             //recuperer  le recycler view
             RecyclerView verticalRecyclerView = view.findViewById(R.id.vertical_recycler_view);
             verticalRecyclerView.setAdapter(new PlantAdapter(context, DataBaseInstance.getInstance().getPlantList(), R.layout.item_vertical_plant, repository));
+            verticalRecyclerView.addItemDecoration(new PlantItemDecoration());
 
             //actualise la Liste plante
             repository.updateData();
-
-            verticalRecyclerView.addItemDecoration(new PlantItemDecoration());
 
             return view;
         }

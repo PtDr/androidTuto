@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.example.tuto.fragments.CollectionFragment;
 import com.example.tuto.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
 //        injecter le fragment home dans l'activité main
          FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-         transaction.replace(R.id.fragmen_container, new HomeFragment(this));
+//         transaction.replace(R.id.fragmen_container, new HomeFragment(this));
+        transaction.replace(R.id.fragmen_container, new CollectionFragment(this));
          transaction.addToBackStack(null);
          transaction.commit();
     }
