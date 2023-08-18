@@ -64,7 +64,7 @@
         android:id="@+id/confirm_button"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/darkGray"
+        android:background="@drawable/ripple_effect"
         android:text="@string/add_plant_page_confirm_button"
         android:textColor="@color/white"
         android:textSize="24dp"
